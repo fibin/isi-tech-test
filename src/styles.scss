@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #EEF0F8;
+}
+
+.btn {
+    background: #2E8FF0;
+    color: #fff;
+    height: 42px;
+    padding: 12px;
+    border-radius: 5px;
+    border-color: transparent;
+    width: 120px;
+    &:hover {
+        cursor: pointer;
+    }
+    &:active {
+        background-color: #107eeb
+    }
+}

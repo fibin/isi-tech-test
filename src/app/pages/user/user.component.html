@@ -1,0 +1,131 @@
+<div class="user">
+    <div class="header-wrapper">
+        <span>Create new user</span>
+        <button
+          (click)="back()"
+          class="btn-with-icon">
+          <i>x</i>
+        </button>
+    </div>
+    <form
+      [formGroup]="form"
+      class="form-group">
+      <div class="form-control-wrapper">
+        <label class="form-control-label">Username*</label>
+        <input
+          formControlName="userName"
+          [style]="controls.userName.touched && controls.userName.errors ? 'border: 1px solid red;' : 'border: 0'"
+          class="form-control">
+          <div
+            *ngIf="controls.userName.touched && controls.userName.errors"
+            class="invalid-input">
+            <div *ngIf="controls.userName.errors.required">This field should not be empty</div>
+            <div *ngIf="controls.userName.errors.unique">This name is already used</div>
+          </div>
+      </div>
+      <div class="form-control-wrapper">
+        <label class="form-control-label">First name*</label>
+        <input
+          formControlName="firstName"
+          [style]="controls.firstName.touched && controls.firstName.errors ? 'border: 1px solid red;' : 'border: 0'"
+          class="form-control">
+          <div
+            *ngIf="controls.firstName.touched && controls.firstName.errors"
+            class="invalid-input">
+            <div *ngIf="controls.firstName.errors.required">This field should not be empty</div>
+          </div>
+      </div>
+      <div class="form-control-wrapper">
+        <label class="form-control-label">Last name*</label>
+        <input
+          formControlName="lastName"
+          [style]="controls.lastName.touched && controls.lastName.errors ? 'border: 1px solid red;' : 'border: 0'"
+          class="form-control">
+          <div
+            *ngIf="controls.lastName.touched && controls.lastName.errors"
+            class="invalid-input">
+            <div *ngIf="controls.lastName.errors.required">This field should not be empty</div>
+          </div>
+      </div>
+      <div class="form-control-wrapper">
+        <label class="form-control-label">Email*</label>
+        <input
+          formControlName="email"
+          type="email"
+          [style]="controls.email.touched && controls.email.errors ? 'border: 1px solid red;' : 'border: 0'"
+          class="form-control">
+          <div
+            *ngIf="controls.email.touched && controls.email.errors"
+            class="invalid-input">
+            <div *ngIf="controls.email.errors.required">This field should not be empty</div>
+            <div *ngIf="controls.email.errors.email">Email must be a valid email address</div>
+          </div>
+      </div>
+      <div class="form-control-wrapper">
+        <label class="form-control-label">Type*</label>
+        <select
+          formControlName="userType"
+          [style]="controls.userType.touched && controls.userType.errors ? 'border: 1px solid red;' : 'border: 0'"
+          class="form-control">
+            <option *ngFor="let type of userType" [value]="type">{{ type }}</option>
+        </select>
+        <div
+          *ngIf="controls.userType.touched && controls.userType.errors"
+          class="invalid-input">
+            <div *ngIf="controls.userType.errors.required">Select an option</div>
+        </div>
+      </div>
+      <div class="form-control-wrapper">
+        <label class="form-control-label">Password*</label>
+        <input
+          formControlName="password"
+          type="password"
+          [style]="controls.password.touched && controls.password.errors ? 'border: 1px solid red;' : 'border: 0'"
+          class="form-control">
+          <div
+            *ngIf="controls.password.touched && controls.password.errors"
+            class="invalid-input">
+            <div *ngIf="controls.password.errors.required">This field should not be empty</div>
+            <div *ngIf="controls.password.errors.pattern">Password min length sould be 8. It should have at least one number and one letter</div>
+        </div>
+      </div>
+      <div class="form-control-wrapper">
+        <label class="form-control-label">Confirm password*</label>
+        <input
+          formControlName="confirmPassword"
+          type="password"
+          [appComparePassword]="'password'"
+          [style]="controls.confirmPassword.touched && controls.confirmPassword.errors ? 'border: 1px solid red;' : 'border: 0'"
+          class="form-control">
+          <div
+            *ngIf="controls.confirmPassword.touched && controls.confirmPassword.errors"
+            class="invalid-input">
+            <div *ngIf="controls.confirmPassword.errors.required">This field should not be empty</div>
+            <div *ngIf="controls.confirmPassword.errors.confirmPasswordError">Passwords not match</div>
+        </div>
+      </div>
+      <div
+        *ngIf="isCreate"
+        class="create-user-btn-wrapper">
+        <button
+          (click)="create()"
+          class="btn">
+          Create
+        </button>
+      </div>
+      <div
+        *ngIf="!isCreate"
+        class="edit-user-btn-wrapper">
+        <button
+            (click)="delete()"
+            class="btn delete">
+            Delete
+        </button>
+        <button
+          (click)="update()"
+          class="btn">
+          Save
+        </button>
+      </div>
+    </form>
+</div>

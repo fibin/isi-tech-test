@@ -1,0 +1,25 @@
+:host {
+    height: 100%;
+    background: #fff;
+    padding: 0 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-not-found {
+    padding: 64px;
+    background: #fff;
+    width: 640px;
+
+    .text {
+        text-align: center;
+        font-size: 72px;
+    }
+
+    .btn-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+}

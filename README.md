@@ -1,6 +1,6 @@
 # IsiTechTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2. and nodeJS version 18.17.1
 
 ## Development server
 

@@ -1,0 +1,39 @@
+.users-list {
+    padding: 64px;
+
+    .button-wrapper {
+        display: flex;
+        justify-content: end;
+        padding: 12px;
+    }
+    .users-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .table-row {
+        height: 56px;
+        border-bottom: 2px solid #fff;
+        background-color: #F4F5F8;
+        &.header {
+            background-color: #fff;
+            color: #A4A4B5;
+            &:hover {
+                background-color: #fff;
+                cursor: default;
+            }
+        }
+        &:hover {
+            background-color: #bbbcbf;
+            cursor: pointer;
+        }
+    }
+    .table-header {
+        text-transform: uppercase;
+        text-align: left;
+        padding: 0 16px 0 16px;
+    }
+
+    .table-cell {
+        padding: 0 16px 0 16px;
+    }
+}

@@ -1,0 +1,32 @@
+<div class="users-list">
+    <div class="button-wrapper">
+        <button
+          (click)="createUser()"
+          class="btn">
+          Create User
+        </button>
+    </div>
+    <table class="users-table">
+        <tr
+          *ngIf="tableHeaders?.length > 0"
+          class="table-row header">
+            <th
+                *ngFor="let header of tableHeaders; trackBy: trackByTableHeader"
+                class="table-header">
+                <span>{{ header }}</span>
+            </th>
+        </tr>
+        <tbody *ngIf="users?.length > 0">
+            <tr
+              *ngFor="let user of users; trackBy: trackByUser"
+              (click)="edit(user)"
+              class="table-row">
+                <td class="table-cell">{{ user?.userName }}</td>
+                <td class="table-cell">{{ user?.firstName }}</td>
+                <td class="table-cell">{{ user?.lastName }}</td>
+                <td class="table-cell">{{ user?.email }}</td>
+                <td class="table-cell">{{ user?.userType }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
